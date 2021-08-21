@@ -42,9 +42,9 @@ async function removeContact(id) {
   }
 }
 
-async function addContact(data) {
+async function addContact(name, email, phone) {
   try {
-    const newContact = { ...data, id: v4() };
+    const newContact = { name, email, phone, id: v4() };
     const contacts = await listContacts();
     // const newContacts = [...contacts, newContact];
     contacts.push(newContact);
